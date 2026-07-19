@@ -1,0 +1,58 @@
+uv --version -- check if uv installed or not
+
+uv venv -- create virtual environment
+
+source .venv/bin/activate -- activate this environment
+
+uv pip install -r requirements.txt
+
+
+install correct version of python -  uv python install 3.11
+
+uv venv --python 3.11    - crreate virtual environment
+
+source .venv/bin/activate    - activate environment
+
+uv pip install -r requirements.txt    - install all dependencies
+
+create .env file
+
+GROQ_API_KEY= 
+GROQ_FALLBACK_API_KEY= 
+
+QDRANT_API_KEY=
+QDRANT_CLUSTER_ENDPOINT=
+
+GEMINI_API_KEY=
+
+why only qdrant db , why not other db?
+
+superlinked - website to compare different database 
+
+jina embedding models
+
+search -> quadrant cloud or qdrant.tech - create qdrant account
+
+create a folder with name app
+
+__init__.py se module banayege har baar - (app.py create karege)
+
+make files in it  -   __init__.py, config.py (consist of imports like os ,dotenv and set all
+                                                                                 API key values.)
+                                                                                
+create ingestion module in app folder
+ingestion me chunking and loader folder create karege - (loader is responsible for loading the 
+                                    documents and chunking is responsible for chunking the documents)
+
+app k andar ek service module banayege - (embedding and rag module create karege - embedding is 
+                        responsible for creating embeddings and rag is responsible for creating rag)
+
+service me retrieval folder and usme embedd.py (embedding create karege isme)
+
+parser - convert one form of doc to another form
+
+uv run logfire auth
+
+
+
+

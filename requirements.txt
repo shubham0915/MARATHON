@@ -1,0 +1,29 @@
+# CORE API & FRAMEWORK
+fastapi
+uvicorn[standard] 
+python-dotenv
+requests
+numpy
+
+# Gemini Embeddings
+google-generativeai
+langchain-google-genai
+sentence-transformers #local fallback model (if no internet or gemini api fails)
+
+# Vector DB
+qdrant-client
+
+# Data ingestion and Document Parsing
+unstructured # to parse pdf,doc,docx,ppt,html,markdown,json,yaml,csv etc
+python-pptx # to parse ppt and pptx files
+python-docx # to parse doc and docx files
+pypdf # to parse pdf files
+beautifulsoup4 # to parse html and htm files
+pdfplumber # to parse pdf files
+
+# Observability and tracking
+logfire[fastapi,requests]
+loguru
+
+
+
