@@ -27,3 +27,13 @@ loguru
 
 
 
+# LangGraph and LLM integrations
+langgraph # we have added this line by ourself
+langchain-openai # we have added this line by ourself
+portkey-ai # we have added this line by ourself
+
+# Search & Reranking
+flashrank # we have added this line by ourself
+
+# UI
+streamlit # we have added this line by ourself

@@ -7,7 +7,10 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-logfire.configure(token=os.getenv("LOGFIRE_TOKEN"))
+logfire.configure(
+    token=os.getenv("LOGFIRE_TOKEN"),
+    advanced=logfire.AdvancedOptions(base_url="https://logfire-us.pydantic.dev") # we have added this line by ourself
+)
 
 # Now safe to import app modules - logfire is already active
 from fastapi import FastAPI, Response
@@ -20,11 +23,12 @@ from typing import Optional
 
 # Initialize FastAPI
 app = FastAPI(title="Enterprise Agentic RAG API")
+logfire.instrument_fastapi(app) # we have added this line by ourself
 
 
-@app.on_event("startup")
-def startup_event():
-    pass  # initialize_rails()  # TODO: Uncomment when app/guardrails.py is created
+# @app.on_event("startup")
+# def startup_event():
+#     initialize_rails()
 
 class QueryRequest(BaseModel):
     q: str

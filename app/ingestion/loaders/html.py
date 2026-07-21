@@ -1,6 +1,4 @@
-# pyrefly: ignore [missing-import]
 import logfire
-# pyrefly: ignore [missing-import]
 from bs4 import BeautifulSoup
 
 

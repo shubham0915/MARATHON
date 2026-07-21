@@ -14,5 +14,9 @@ class Settings:
     GROQ_FALLBACK_API_KEY=os.getenv("GROQ_FALLBACK_API_KEY")
     GROQ_MODEL="llama-3.3-70b-versatile"
 
+    PORTKEY_API_KEY=os.getenv("PORTKEY_API_KEY") # we have added this line by ourself
+    GROQ_SLUG=os.getenv("GROQ_SLUG") # we have added this line by ourself
+    GROQ_SLUG_2=os.getenv("GROQ_SLUG_2") # we have added this line by ourself
+
 settings = Settings()  #object of Settings class to get and set values globally
 

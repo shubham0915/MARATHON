@@ -56,3 +56,12 @@ uv run logfire auth
 
 
 
+
+
+app/loaders me ja k sab documents ko string me convert karege
+
+app/retrieval me embeddings me check karege ki konsa model kaam kar ra ha
+and then embeddings generate kar dege 
+
+
+
