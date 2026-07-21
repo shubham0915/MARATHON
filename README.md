@@ -23,7 +23,7 @@ The core of the system is built on **LangGraph**, orchestrating a state machine 
 *   **`main.py`**: The entry point of the application. It initializes FastAPI, configures Logfire, sets up the NeMo Guardrails, and exposes the `/query` and `/graph` endpoints.
 *   **`config.py`**: Centralized configuration management using Pydantic/dotenv. Loads all API keys (Gemini, Groq, Qdrant) and environment variables securely.
 *   **`guardrails.py`** *(pending creation)*: Configuration for NeMo Guardrails to enforce content safety.
-*   **`gateway.py`** *(pending creation)*: Centralized initialization for the Langchain LLM via Portkey.
+*   **`gateway/client.py`**: Centralized initialization for the Langchain LLM via Portkey. Handles API key fallbacks and caching rules.
 
 ### `app/agents/` (LangGraph Orchestration)
 *   **`graph.py`**: Defines the `StateGraph`. It wires together the planner, retriever, and responder nodes, establishes the conditional routing logic, and attaches `MemorySaver` for thread-based conversation memory.
@@ -38,8 +38,12 @@ The core of the system is built on **LangGraph**, orchestrating a state machine 
 *   **`loaders/html.py, office.py, pdf.py, text.py`**: Specific data loaders designed to parse and extract text from various file formats.
 
 ### `app/services/` (Core Utilities)
+*   **`retrieval/qdrant_service.py`**: Connects to the Qdrant vector database, managing enterprise knowledge search using the `query_points` API.
 *   **`retrieval/embeddings.py`**: Logic for converting text chunks into dense vector embeddings before they are inserted into Qdrant.
 *   **`retrieval/ranking_service.py`**: Implements **FlashRank** (using a local ONNX model `ms-marco-MiniLM-L-6-v2`). Standard vector search is fast but mathematically fuzzy; this service cross-encodes the retrieved documents against the query to re-rank and return only the most accurate results.
+
+### `ui/` (Frontend)
+*   **`app.py`**: A clean, interactive Streamlit frontend that connects to the FastAPI backend. It maintains visual chat state and streams responses.
 
 ### Root Files
 *   **`requirements.txt`**: Python dependencies required to run the project.
